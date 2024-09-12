@@ -1,3 +1,6 @@
+/// injection_container.dart: Simple direct Service Locator
+///   FACTORY mode: New instance
+///   SINGLETON mode: SAME instance( in the app's lifetime)
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 import 'package:news_app_clean_architecture/features/daily_news/data/data_sources/remote/news_api_service.dart';
@@ -21,7 +24,7 @@ Future<void> initializeDependencies() async {
   // Dio
   sl.registerSingleton<Dio>(Dio());
 
-  // Dependencies
+  // Dependencies-> Singleton
   sl.registerSingleton<NewsApiService>(NewsApiService(sl()));
 
   sl.registerSingleton<ArticleRepository>(
@@ -46,7 +49,8 @@ Future<void> initializeDependencies() async {
   );
 
 
-  //Blocs
+  /// Blocs---RemoteArticlesBloc---use Factory Factory??
+  /// so every time will get a new instance;
   sl.registerFactory<RemoteArticlesBloc>(
     ()=> RemoteArticlesBloc(sl())
   );
