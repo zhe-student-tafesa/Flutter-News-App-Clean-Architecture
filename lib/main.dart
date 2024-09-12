@@ -9,6 +9,7 @@ import 'injection_container.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  /// initialize Dependencies
   await initializeDependencies();
   runApp(const MyApp());
 }
@@ -20,10 +21,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<RemoteArticlesBloc>(
       create: (context) => sl()..add(const GetArticles()),
+      /// use defined theme
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: theme(),
         onGenerateRoute: AppRoutes.onGenerateRoutes,
+        /// home page is DailyNews
         home: const DailyNews()
       ),
     );
