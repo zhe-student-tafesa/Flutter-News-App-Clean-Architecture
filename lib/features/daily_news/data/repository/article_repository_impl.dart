@@ -13,22 +13,26 @@ import '../data_sources/remote/news_api_service.dart';
 
 /// in data: implements Repository
 class ArticleRepositoryImpl implements ArticleRepository {
+  // Repository need Service 01
   final NewsApiService _newsApiService;
   final AppDatabase _appDatabase;
   ArticleRepositoryImpl(this._newsApiService,this._appDatabase);
   
   @override
   Future<DataState<List<ArticleModel>>> getNewsArticles() async {
+    /// use try-Catch  05
    try {
+     // Call api 02
     final httpResponse = await _newsApiService.getNewsArticles(
       apiKey:newsAPIKey,
       country:countryQuery,
       category:categoryQuery,
     );
-
+    // if 200 03
     if (httpResponse.response.statusCode == HttpStatus.ok) {
       return DataSuccess(httpResponse.data);
     } else {
+      // if failed 04
       return DataFailed(
         DioError(
           error: httpResponse.response.statusMessage,
