@@ -28,6 +28,7 @@ class DailyNews extends StatelessWidget {
         ),
         actions: [
           GestureDetector(
+            // Show Saved Articles View
             onTap: () => _onShowSavedArticlesViewTapped(context),
             child: const Padding(
               padding: EdgeInsets.symmetric(horizontal: 14),

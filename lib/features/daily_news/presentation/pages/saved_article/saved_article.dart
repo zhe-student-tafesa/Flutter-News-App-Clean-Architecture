@@ -76,6 +76,7 @@ class SavedArticles extends HookWidget {
     Navigator.pop(context);
   }
 
+  /// delete Article from local DB
   void _onRemoveArticle(BuildContext context, ArticleEntity article) {
     BlocProvider.of<LocalArticleBloc>(context).add(RemoveArticle(article));
   }
