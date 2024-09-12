@@ -15,6 +15,7 @@ import '../data_sources/remote/news_api_service.dart';
 class ArticleRepositoryImpl implements ArticleRepository {
   // Repository need Service 01
   final NewsApiService _newsApiService;
+  /// need AppDatabase property
   final AppDatabase _appDatabase;
   ArticleRepositoryImpl(this._newsApiService,this._appDatabase);
   
@@ -47,6 +48,7 @@ class ArticleRepositoryImpl implements ArticleRepository {
    }
   }
 
+  // in data fold:  implements getSavedArticles saveArticle  and removeArticle
   @override
   Future<List<ArticleModel>> getSavedArticles() async {
     return _appDatabase.articleDAO.getArticles();

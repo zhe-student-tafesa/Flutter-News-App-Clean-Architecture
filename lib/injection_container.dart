@@ -28,6 +28,7 @@ Future<void> initializeDependencies() async {
   // Dependencies-> Singleton
   sl.registerSingleton<NewsApiService>(NewsApiService(sl()));
 
+  ///  sl(),sl()
   sl.registerSingleton<ArticleRepository>(
     ArticleRepositoryImpl(sl(),sl())
   );
@@ -37,14 +38,17 @@ Future<void> initializeDependencies() async {
     GetArticleUseCase(sl())
   );
 
+  // UseCases--DB
   sl.registerSingleton<GetSavedArticleUseCase>(
     GetSavedArticleUseCase(sl())
   );
 
+  // UseCases--DB
   sl.registerSingleton<SaveArticleUseCase>(
     SaveArticleUseCase(sl())
   );
-  
+
+  // UseCases--DB
   sl.registerSingleton<RemoveArticleUseCase>(
     RemoveArticleUseCase(sl())
   );

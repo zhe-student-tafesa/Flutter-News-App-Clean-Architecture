@@ -7,7 +7,8 @@ abstract class ArticleRepository {
   Future<DataState<List<ArticleEntity>>> getNewsArticles();
 
   /// Add abstract method: in abstract Class
-  // Database methods
+  ///
+  /// Database methods: getSavedArticles saveArticle  and removeArticle
   Future < List < ArticleEntity >> getSavedArticles();
 
   Future < void > saveArticle(ArticleEntity article);

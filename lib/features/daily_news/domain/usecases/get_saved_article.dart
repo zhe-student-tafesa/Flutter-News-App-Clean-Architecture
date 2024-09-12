@@ -3,6 +3,8 @@ import 'package:news_app_clean_architecture/features/daily_news/domain/entities/
 import 'package:news_app_clean_architecture/features/daily_news/domain/repository/article_repository.dart';
 
 class GetSavedArticleUseCase implements UseCase<List<ArticleEntity>,void>{
+  /// in UseCase: use Repository
+  ///  in Repository: use Service
   
   final ArticleRepository _articleRepository;
 
