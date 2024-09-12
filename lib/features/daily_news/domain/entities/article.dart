@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-
+/// Define model / Entity
 class ArticleEntity extends Equatable{
   final int ? id;
   final String ? author;

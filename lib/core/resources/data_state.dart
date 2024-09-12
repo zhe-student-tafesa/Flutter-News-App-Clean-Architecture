@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 
+/// abstract class: for API request
 abstract class DataState<T> {
   final T ? data;
   final DioError ? error;
