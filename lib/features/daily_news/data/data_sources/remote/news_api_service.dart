@@ -17,6 +17,8 @@ abstract class NewsApiService {
   /// https://newsapi.org/v2/top-headlines?apiKey=456789521&country=us&category=business
   ///                        /top-headlines?
   ///                                      apiKey=456789521&country=us&category=business
+  // run: flutter pub run build_runner build,
+  //              will generate news_api_service.g.dart
   Future<HttpResponse<List<ArticleModel>>> getNewsArticles({
     @Query("apiKey") String ? apiKey,
     @Query("country") String ? country,
