@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ///  DO not forget BlocProvider
     return BlocProvider<RemoteArticlesBloc>(
       create: (context) => sl()..add(const GetArticles()),
       /// use defined theme
