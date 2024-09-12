@@ -113,6 +113,7 @@ class ArticleDetailsView extends HookWidget {
   }
 
   void _onFloatingActionButtonPressed(BuildContext context) {
+    // save to DB
     BlocProvider.of<LocalArticleBloc>(context).add(SaveArticle(article!));
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(

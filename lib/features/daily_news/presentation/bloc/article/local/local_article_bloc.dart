@@ -7,6 +7,8 @@ import '../../../../domain/usecases/remove_article.dart';
 import '../../../../domain/usecases/save_article.dart';
 
 class LocalArticleBloc extends Bloc<LocalArticlesEvent,LocalArticlesState> {
+  ///BLOC	use usecases
+
   final GetSavedArticleUseCase _getSavedArticleUseCase;
   final SaveArticleUseCase _saveArticleUseCase;
   final RemoveArticleUseCase _removeArticleUseCase;
@@ -16,6 +18,7 @@ class LocalArticleBloc extends Bloc<LocalArticlesEvent,LocalArticlesState> {
     this._saveArticleUseCase,
     this._removeArticleUseCase
   ) : super(const LocalArticlesLoading()){
+    /// register these methods in the event handler
     on <GetSavedArticles> (onGetSavedArticles);
     on <RemoveArticle> (onRemoveArticle);
     on <SaveArticle> (onSaveArticle);

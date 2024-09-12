@@ -11,6 +11,7 @@ abstract class LocalArticlesEvent extends Equatable {
   List<Object> get props => [article!];
 }
 
+/// 3 events
 class GetSavedArticles extends LocalArticlesEvent {
   const GetSavedArticles();
 }
