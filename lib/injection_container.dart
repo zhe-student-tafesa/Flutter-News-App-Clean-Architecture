@@ -18,6 +18,7 @@ final sl = GetIt.instance;
 
 Future<void> initializeDependencies() async {
 
+  /// create DB and register Singleton DB
   final database = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
   sl.registerSingleton<AppDatabase>(database);
   

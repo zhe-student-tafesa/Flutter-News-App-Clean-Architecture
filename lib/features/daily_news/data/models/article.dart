@@ -3,6 +3,7 @@ import 'package:news_app_clean_architecture/features/daily_news/domain/entities/
 import '../../../../core/constants/constants.dart';
 
 /// Define Model in data folder: !!! extends Entity
+// generate a table: Local Database
 @Entity(tableName: 'article',primaryKeys: ['id'])
 class ArticleModel extends ArticleEntity {
   const ArticleModel({

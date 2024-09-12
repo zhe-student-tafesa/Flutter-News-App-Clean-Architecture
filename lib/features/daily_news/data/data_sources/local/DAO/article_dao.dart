@@ -3,6 +3,7 @@ import 'package:news_app_clean_architecture/features/daily_news/data/models/arti
 
 @dao
 abstract class ArticleDao {
+  ///  abstract method: insertArticle, deleteArticle, getArticles
   
   @Insert()
   Future<void> insertArticle(ArticleModel article);
