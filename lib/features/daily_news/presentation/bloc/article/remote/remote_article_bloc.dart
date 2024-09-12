@@ -5,10 +5,14 @@ import 'package:news_app_clean_architecture/features/daily_news/presentation/blo
 import 'package:news_app_clean_architecture/features/daily_news/presentation/bloc/article/remote/remote_article_state.dart';
 
 class RemoteArticlesBloc extends Bloc<RemoteArticlesEvent,RemoteArticlesState> {
-  
+
+  /// finally:  finally: finally:
+  /// UseCase -> Repository -> Service
   final GetArticleUseCase _getArticleUseCase;
-  
+
+  /// initial state: RemoteArticlesLoading
   RemoteArticlesBloc(this._getArticleUseCase) : super(const RemoteArticlesLoading()){
+    /// define on <GetArticles>
     on <GetArticles> (onGetArticles);
   }
 
@@ -17,11 +21,13 @@ class RemoteArticlesBloc extends Bloc<RemoteArticlesEvent,RemoteArticlesState> {
     final dataState = await _getArticleUseCase();
 
     if (dataState is DataSuccess && dataState.data!.isNotEmpty) {
+      /// if 200, emit new state with data
       emit(
         RemoteArticlesDone(dataState.data!)
       );
     }
-    
+
+    /// else, emit error state
     if (dataState is DataFailed) {
       emit(
         RemoteArticlesError(dataState.error!)
