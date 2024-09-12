@@ -10,6 +10,8 @@ import 'package:news_app_clean_architecture/features/daily_news/domain/repositor
 
 import '../data_sources/remote/news_api_service.dart';
 
+
+/// in data: implements Repository
 class ArticleRepositoryImpl implements ArticleRepository {
   final NewsApiService _newsApiService;
   final AppDatabase _appDatabase;
